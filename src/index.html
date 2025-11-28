@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./img/favicon.png">
+    <title>Webula</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrapper" id="app" :class="{isMobile, isTablet}">
+        @@include('blocks/modules/header/header.html', {})
+        <main class="content">
+
+            @@include('blocks/modules/main-marketing/main-marketing.html', {})
+            
+            @@include('blocks/modules/main-cards/main-cards.html', {})
+            @@include('blocks/modules/main-team/main-team.html', {})
+            @@include('blocks/modules/main-grid/main-grid.html', {})
+            @@include('blocks/modules/main-price/main-price.html', {})
+            @@include('blocks/modules/main-callback/main-callback.html', {})
+        </main>
+        @@include('blocks/modules/footer/footer.html', {})
+        @@include('blocks/modules/modals/main.modal.html', {})
+    </div>
+    <script src="js/app.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<div class="modal" data-modal="1">
+    <div class="modal__in">
+        <div class="modal__closer"></div>
+        <div class="modal__title">Авторизация</div>
+        <div class="modal__text">На указанный номер, будет направлен смс-код для подтверждения</div>
+        <form action="/login" method="POST" class="modal__form">
+            <div class="modal__form--input">
+                <input type="tel" id="tel" name="phone" placeholder="Телефон" required>
+                <label for="tel">Телефон</label>
+            </div>
+            <div class="modal__form--submit">
+                <input id="sb2" type="submit" value="Войти">
+                <label for="sb2"></label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal modal_sends" data-modal="2">
+    <div class="modal__in">
+        <div class="modal__closer"></div>
+        <div class="modal__title">Отписаться от рассылки</div>
+        <div class="modal__text">Для того чтобы отписаться от рассылки <br>введите номер телефона</div>
+        <form action="/unsubcribe" method="POST" class="modal__form">
+            <div class="modal__form--input">
+                <input type="tel" id="tel2" name="phone" placeholder="Телефон" required>
+                <label for="tel2">Телефон</label>
+            </div>
+            <div class="modal__form--submit">
+                <input id="sb1" type="submit" value="Отписаться">
+                <label for="sb1"></label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal modal_check" data-modal="3">
+    <div class="modal__in">
+        <div class="modal__closer"></div>
+        <div class="modal__title">Заполните форму</div>
+        <form action="/newform" class="modal__form" method="POST">
+            <div class="modal__form--input">
+                <input type="text" id="name1" name="fio" placeholder="Ф.И.О" required>
+                <label for="name1">Ф.И.О</label>
+            </div>
+            <div class="modal__form--input">
+                <input type="text" id="date1" name="birthday" placeholder="Дата рождения" required>
+                <label for="date1">Дата рождения</label>
+            </div>
+            <div class="modal__form--input">
+                <input type="text" id="adr1" name="address" placeholder="Адрес проживания" required>
+                <label for="adr1">Адрес проживания</label>
+            </div>
+            <div class="modal__form--input">
+                <input type="email" id="email1" name="email" placeholder="Почта" required>
+                <label for="email1">Почта</label>
+            </div>
+            <div class="modal__form--input">
+                <input type="tel" id="tel3" name="phone" placeholder="Телефон" required>
+                <label for="tel3">Телефон</label>
+            </div>
+            <label class="modal__form--custom-checkbox">
+                <input type="checkbox" name="checkbox1" value="checked">
+                <span><span>Я даю свое <a href="#" target="_blank"> Согласие на обработку персональных данных</a></span></span>
+            </label>
+            <label class="modal__form--custom-checkbox">
+                <input type="checkbox" name="checkbox2" value="checked">
+                <span><span>Я даю свое Предварительное <br> <a href="#" target="_blank"> согласие на получение рекламных материалов</a></span></span>
+            </label>
+            <div class="modal__form--submit">
+                <input id="sb3" type="submit" value="Получить деньги">
+                <label for="sb3"></label>
+            </div>
+        </form>
+    </div>
+</div>

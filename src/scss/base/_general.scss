@@ -1,0 +1,66 @@
+:root {
+    --font-family: "Involve", sans-serif;
+    --second-family: "Montserrat", sans-serif;
+}
+body {
+    box-sizing: border-box;
+}
+*,
+::after,
+::before {
+    box-sizing: inherit;
+    font-family: var(--font-family);
+    outline: none;
+    scroll-behavior: smooth;
+    transition: all .3s ease;
+}
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--white);
+    height: auto;
+    background: #141414;
+    transition: none;
+}
+.ovh {
+    overflow: hidden;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 100vh;
+}
+.content {
+    z-index: 2;
+    flex: 1;
+    position: relative;
+}
+.footer {
+    flex: 0 0 auto;
+}
+.center_block {
+    max-width: vw(1280);
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: vw(40);
+    padding-right: vw(40);
+    @media all and (max-width: 1023px) {
+        max-width: 1280px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    @media all and (max-width: 540px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+textarea {
+    resize: none;
+}

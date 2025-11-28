@@ -1,0 +1,178 @@
+.main-cards {
+    padding-top: 130px;
+    @media all and (max-width: 1023px) {
+        padding-top: 80px;
+    }
+    @media all and (max-width: 540px) {
+        padding-top: 60px;
+    }
+    &__in {
+        display: flex;
+        align-items: flex-start;
+        gap: 80px;
+        @media all and (max-width: 1023px) {
+            flex-direction: column;
+            gap: 40px;
+            overflow: hidden;
+        }
+    }
+    &__l-side {
+        width: 46%;
+        position: sticky;
+        top: 100px;
+        @media all and (max-width: 1023px) {
+            top: unset;
+            width: 100%;
+        }
+    }
+    &__flag {
+        font-weight: 500;
+        font-size: 10px;
+        color: #fff;
+        padding: 8px 48px;
+        backdrop-filter: blur(16.5px);
+        background: rgba(98, 98, 98, 0.2);
+        border-radius: 100px;
+        display: inline-block;
+        position: relative;
+        margin-bottom: 20px;
+        @media all and (max-width: 540px) {
+            margin-bottom: 15px;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(
+                135deg,
+                rgba(255,255,255,0.25) 0%,
+                rgba(255,255,255,0.05) 40%,
+                rgba(0,0,0,0.2) 100%
+            );
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+            pointer-events: none;
+        }
+    }
+    &__title {
+        margin: 0;
+        margin-bottom: 15px;
+        font-weight: 600;
+        font-size: 35px;
+        line-height: 111%;
+        color: #ebebeb;
+        @media all and (max-width: 540px) {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+        b {
+            background: linear-gradient(90deg, #723590 0%, #d8a8ee 100%);
+            background-clip: text;
+            font-weight: normal;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+    &__more {
+        @media all and (max-width: 1023px) {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+    }
+    &__text {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 116%;
+        color: #fff;
+        opacity: .5;
+        max-width: 305px;
+        @media all and (max-width: 1023px) {
+            width: 60%;
+            max-width: 100%;
+        }
+        @media all and (max-width: 540px) {
+            max-width: 100%;
+            font-size: 12px;
+            width: 100%;
+        }
+    }
+    &__contact {
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        margin-top: 170px;
+        @media all and (max-width: 1023px) {
+            margin-top: 0;
+        }
+    }
+    &__span {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 116%;
+        color: #fff;
+        white-space: nowrap;
+    }
+    &__socs {
+        gap: 16px;
+        display: flex;
+        align-items: center;
+    }
+    &__soc {
+        font-size: 0;
+        &:hover {
+            opacity: .8;
+        }
+    }
+    &__r-side {
+        width: 54%;
+        display: grid;
+        flex-wrap: wrap;
+        gap: 15px;
+        grid-template-columns: repeat(2, 1fr);
+        @media all and (max-width: 1023px) {
+            display: block;
+            margin-right: -20px;
+            width: calc(100% + 20px);
+        }
+    }
+    .slick-slide {
+        @media all and (max-width: 1023px) {
+            width: 263px;
+            margin-right: 10px;
+        }
+    }
+    &__block {
+        background: linear-gradient(0deg, rgba(20, 20, 20, 0) 0%, #70338e 100%);
+        border-radius: 5px;
+        padding: 20px 10px;
+        padding-bottom: 50px;
+        height: max-content;
+        &:nth-child(even) {
+            margin-top: 60px;
+        }
+        &--title {
+            margin-bottom: 10px;
+            font-family: var(--second-family);
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 116%;
+            color: #fff;
+        }
+        &--text {
+            font-family: var(--second-family);
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 116%;
+            color: #fff;
+            opacity: 0.5;
+        }
+    }
+
+}

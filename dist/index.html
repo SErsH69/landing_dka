@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./img/favicon.png">
+    <title>Webula</title>
+	<link rel="stylesheet" href="css/style.css?_v=20251128153929">
+</head>
+<body>
+    <div class="wrapper" id="app" :class="{isMobile, isTablet}">
+        <header class="header" :class="{'is-fixed': header.isFixed}">
+    <div class="header__in center_block">
+        <nav class="header__menu header__menu--l-side" v-if="sizes.window >= 1023">
+            <ul>
+                <li><a href="#">Причины</a></li>
+                <li><a href="#">Проблемы</a></li>
+                <li><a href="#">Отзывы</a></li>
+            </ul>
+        </nav>
+        <div class="header__logo">
+            <img src="./img/svg/logo.svg" alt="Webula">
+        </div>
+        <nav class="header__menu header__menu--r-side" v-if="sizes.window >= 1023">
+            <ul>
+                <li><a href="#">Причины</a></li>
+                <li><a href="#">Проблемы</a></li>
+                <li><a href="#">Отзывы</a></li>
+            </ul>
+        </nav>
+        <div class="header__burger" :class="{'isOpened': header.isMobileMenuOpened}" v-if="sizes.window <= 1023">
+            <div class="header__burger--icon" @click.prevent="header.toogleMobileMenu.apply(header)"></div>
+            <div class="header__burger--body">
+                <div class="header__burger--top">
+                    <a href="/" class="header__burger--logo">
+                        <img src="./img/svg/logo.svg" alt="">
+                    </a>
+                    <div class="header__burger--close" @click.prevent="header.toogleMobileMenu.apply(header)"></div>
+                </div>
+                <nav class="header__burger--menu" @click="header.toogleMobileMenu.apply(header)">
+                    <ul>
+                        <li><a href="#">Услуги</a></li>
+                        <li><a href="#">Калькулятор</a></li>
+                        <li><a href="#">Кейсы</a></li>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="header__burger--info">
+                    <a href="tel:+74951234567" class="header__burger--inf header__burger--phone">+7 (495) 123-45-67</a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="header__burger--inf header__burger--soc header__burger--tg">Telegram</a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="header__burger--inf header__burger--soc header__burger--wts">WhatsApp</a>
+                </div>
+                <button class="header__burger--btn" data-modal-id="1">Связаться</button>
+            </div>
+        </div>
+    </div>
+</header>
+        <main class="content">
+
+            <section class="main-marketing">
+    <div class="main-marketing__sticky">
+        <div class="main-marketing__scene">
+            <model-viewer id="marketingModel"
+                    src="./files/model/Шар.glb"
+                    camera-orbit="0deg 90deg 12m"
+                    min-camera-orbit="auto 90deg 8m"
+                    max-camera-orbit="auto 90deg 16m"
+                    field-of-view="25deg"
+                    min-field-of-view="20deg"
+                    max-field-of-view="30deg"
+                    disable-zoom
+                    camera-controls="false"
+                    auto-rotate="false"
+                    interaction-prompt="none"
+                    exposure="1"
+                    shadow-intensity="0.5">
+            </model-viewer>
+        </div>
+
+        <div class="main-marketing__content center_block">
+            <div class="main-marketing__titles">
+                <div class="main-marketing__flag">Причины</div>
+                <div class="main-marketing__info">
+                    <div class="main-marketing__title">Почему маркетинг должен быть системным?</div>
+                    <div class="main-marketing__text">
+                        и прогнозировать показатели: вложил рубль — достал 3
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-marketing__blocks">
+                <div class="main-marketing__block">
+                    <div class="main-marketing__block--title">Возможность собирать свой массив данных</div>
+                    <div class="main-marketing__block--text">и прогнозировать показатели: вложил рубль - достал 3</div>
+                </div>
+                <div class="main-marketing__block">
+                    <div class="main-marketing__block--title">Использование собственных аудиторий на 100%</div>
+                    <div class="main-marketing__block--text">за счет правильного движения по воронкам и инструментам</div>
+                </div>
+                <div class="main-marketing__block">
+                    <div class="main-marketing__block--title">Прозрачность каждого показателя</div>
+                    <div class="main-marketing__block--text">и объективная оценка работы команды или подрядчика</div>
+                </div>
+                <div class="main-marketing__block">
+                    <div class="main-marketing__block--title">Децентрализованность</div>
+                    <div class="main-marketing__block--text">любого сотрудника можно заменить без колоссального влияния на всю систему</div>
+                </div>
+            </div>
+
+            <div class="main-marketing__line"></div>
+        </div>
+    </div>
+</section>
+
+            
+            <section class="main-cards">
+    <div class="main-cards__in center_block">
+        <div class="main-cards__l-side">
+            <div class="main-cards__flag">Причины</div>
+            <div class="main-cards__title">Какими путями мы приходим <br>к росту <b>показателей наших клиентов?</b></div>
+            <div class="main-cards__more">
+                <div class="main-cards__text">и прогнозировать показатели: вложил рубль - достал 3 и прогнозировать показатели: вложил рубль - достал 3</div>
+                <div class="main-cards__contact" v-if="sizes.window >= 540">
+                    <div class="main-cards__span">Обсудить задачу</div>
+                    <div class="main-cards__socs">
+                        <a href="#" class="main-cards__soc" target="_blank" rel="noopener noreferrer">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="40" height="40" rx="5" fill="#F6F6F6" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.1283 20.5951C16.4172 18.7451 19.2842 17.5494 20.7062 16.9628C24.7887 15.2933 25.6373 15 26.1878 15C26.3024 15 26.5777 15.0226 26.7611 15.1579C26.8988 15.2707 26.9446 15.4287 26.9676 15.5415C26.9905 15.6543 27.0134 15.9024 26.9905 16.1055C26.7611 18.3841 25.8208 23.9566 25.3162 26.506C25.1098 27.5889 24.697 27.9499 24.307 27.995C23.4584 28.0627 22.7933 27.431 21.9676 26.9121C20.6832 26.0773 19.9493 25.5584 18.6879 24.7462C17.2429 23.7987 18.1833 23.2798 19.009 22.445C19.2154 22.2194 22.9997 18.8579 23.0685 18.542C23.0685 18.4969 23.0915 18.3616 22.9997 18.2939C22.908 18.2262 22.7933 18.2487 22.7016 18.2713C22.564 18.2939 20.4998 19.6475 16.4861 22.3097C15.8897 22.7158 15.3622 22.8963 14.8806 22.8963C14.3531 22.8963 13.3439 22.603 12.587 22.3548C11.6696 22.0615 10.9357 21.9036 11.0045 21.4073C11.0733 21.1365 11.4402 20.8658 12.1283 20.5951Z" fill="#70338E" />
+                            </svg>
+                        </a>
+                        <a href="#" class="main-cards__soc" target="_blank" rel="noopener noreferrer">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="40" height="40" rx="5" fill="#F6F6F6" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.1736 27.8093L13.5788 25.1425L12.8334 23.7407C11.404 21.0528 11.8398 17.8196 13.9371 15.5518C16.887 12.362 22.0704 12.1296 25.3297 15.041L25.557 15.244C27.2489 16.7553 28.1378 18.8961 27.9826 21.0855C27.6512 25.7595 22.8322 28.9644 18.0347 27.7013L16.2422 27.2294L13.3982 27.9934C13.2745 28.0267 13.1554 27.929 13.1736 27.8093ZM16.5187 17.627L16.1895 18.3522C15.925 18.9346 15.8378 19.5827 16.0939 20.1686C16.4014 20.8724 16.9909 21.8728 18.0819 22.7873C19.173 23.7019 20.2955 24.1364 21.0726 24.3418C21.7195 24.5128 22.3916 24.355 22.9737 24.0389L23.7228 23.6321C24.2306 23.3563 24.31 22.6955 23.8807 22.3191L23.3064 21.8022C22.9896 21.5245 22.5035 21.5115 22.1709 21.7721C21.798 22.0643 20.9856 22.4528 20.5616 22.2308C20.3086 22.0983 19.7068 21.6622 19.5118 21.4987C19.2855 21.3091 18.725 20.7475 18.5412 20.4979C18.3064 20.1792 18.5741 19.4546 18.736 19.0979L18.8378 18.8772C18.9853 18.5523 18.8976 18.1763 18.6175 17.9415L17.8972 17.3369C17.4529 16.9645 16.7526 17.1119 16.5187 17.627Z" fill="#70338E" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-cards__r-side js_mcards">
+            <div class="main-cards__block">
+                <div class="main-cards__block--title">Определение бизнес-целей на ближайший квартал / полугодие / 2 года</div>
+                <div class="main-cards__block--text">Анализируем рынок, конкурентов, состояние текущего отдела маркетинга (при его наличии) и находим узкие места и точки роста</div>
+            </div>
+            <div class="main-cards__block">
+                <div class="main-cards__block--title">Обучаем собственника / руководителя основным механикам работы маркетинговых инструментов</div>
+                <div class="main-cards__block--text">Отвечаем на вопросы: какие показатели действительно важны для бизнеса, а какие нет? Как правильно выстроить воронку и понять реальные боли ваших клиентов?</div>
+            </div>
+            <div class="main-cards__block">
+                <div class="main-cards__block--title">Составляем план действий и краткосрочную и долгосрочные дорожные карты</div>
+                <div class="main-cards__block--text">Определяем инструменты, ключевые гипотезы, планируем бюджет и показатели, отмечаем контрольные точки и составляем штатное расписание, к которому мы должны прийти. для реализации наших целей</div>
+            </div>
+            <div class="main-cards__block">
+                <div class="main-cards__block--title">Подготавливаем систему управления и аналитики</div>
+                <div class="main-cards__block--text">Знакомимся с системой отчетности, KPI и дашбордами, тренируемся на тестовых данных для стабильной работы и управления системой на реальных показателях.</div>
+            </div>
+            <div class="main-cards__block">
+                <div class="main-cards__block--title">Момент Х - найм и запуск первых рекламных кампаний </div>
+                <div class="main-cards__block--text">Подбираем людей на необходимые позиции под составленную ранее стратегию и штатное расписание, проводим тестирование, принимаем в штат, после успешного прохождения испытательного срока и достижения положительных результатов по поставленным задачам. </div>
+            </div>
+            <div class="main-cards__block">
+                <div class="main-cards__block--title">Рихтовка и систематизация работы отдела </div>
+                <div class="main-cards__block--text">Описание процессов, ввод регламентов (с разной степенью жесткости, зависимо от ситуации), отлаживание ежедневного и еженедельного планирования, контроль выполнения задач по спринтам, внедрение CRM и таск-менеджеров</div>
+            </div>
+            <div class="main-cards__block">
+                <div class="main-cards__block--title">Внедрение стратегического планирования среди сотрудников</div>
+                <div class="main-cards__block--text">Оптимизация работы отдела, его бюджетов, аналитика реальных показателей по введенным ранее регламентам и инструментам, подготовка к плавной передаче отдела под ваш непосредственный контроль</div>
+            </div>
+            <div class="main-cards__block">
+                <div class="main-cards__block--title">Выстраиваем отдел IT поддержки для маркетинга, если это необходимо </div>
+                <div class="main-cards__block--text">Разработка сайтов, креативов, ботов - все это очень часто нужно отделу маркетинга, и зачастую, гораздо дешевле и эффективнее иметь в своей команде таких людей, которые полностью подчиняются вам, чем использовать непроверенных подрядчиков (касается тех, у кого большие бюджеты и объем гипотез)</div>
+            </div>
+        </div>
+    </div>
+</section>
+            <section class="main-team">
+    <div class="main-team__white">
+        <div class="main-team__in center_block">
+            <div class="main-team__top">
+                <div class="main-team__l-side">
+                    <div class="main-team__image">
+                        <picture><source srcset="./img/team.webp" type="image/webp"><img src="./img/team.png" alt=""></picture>
+                    </div>
+                    <div class="main-team__info">Мы выстраиваем команду и берем на себя все задачи</div>
+                </div>
+                <div class="main-team__r-side">
+                    <div class="main-team__title">Результат - готовый отдел маркетинга за 3-4 месяца!</div>
+                    <div class="main-team__text">Мы потратили годы и сотни миллионов бюджетов на то, что вы можете получить и окупить на дистанции первых 6-8 месяцев со старта работ </div>
+                </div>
+            </div>
+            <div class="main-team__blocks">
+                <div class="main-team__block">
+                    <div class="main-team__block--image">
+                        <picture><source srcset="./img/avat1.webp" type="image/webp"><img src="./img/avat1.jpg" alt=""></picture>
+                    </div>
+                    <div class="main-team__block--card">
+                        <div class="main-team__block--name">Иван Иванов</div>
+                        <div class="main-team__block--work">Кто в компании</div>
+                        <div class="main-team__block--text">
+                            <b>Регалии</b>
+                            <p>Мы потратили годы и сотни </p>
+                            <p>Мы потратили годы и сотни Мы потратили годы и сотни  </p>
+                            <p>Мы потратили годы и сотни Мы потратили годы и сотни  Мы потратили годы и сотни </p>
+                            <p>Мы потратили годы и сотни </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-team__block">
+                    <div class="main-team__block--image">
+                        <picture><source srcset="./img/avat2.webp" type="image/webp"><img src="./img/avat2.jpg" alt=""></picture>
+                    </div>
+                    <div class="main-team__block--card">
+                        <div class="main-team__block--name">Иван Иванов</div>
+                        <div class="main-team__block--work">Кто в компании</div>
+                        <div class="main-team__block--text">
+                            <b>Регалии</b>
+                            <p>Мы потратили годы и сотни </p>
+                            <p>Мы потратили годы и сотни Мы потратили годы и сотни  </p>
+                            <p>Мы потратили годы и сотни Мы потратили годы и сотни  Мы потратили годы и сотни </p>
+                            <p>Мы потратили годы и сотни </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+            <section class="main-grid">
+    <div class="main-grid__in center_block">
+        <div class="main-grid__top">
+            <div class="main-grid__flag" v-if="sizes.window >= 1023">Причины</div>
+            <div class="main-grid__title">Мы против такого маркетинга</div>
+        </div>
+        <div class="main-grid__grid">
+            <div class="main-grid__block main-grid__block--light">
+                <div class="main-grid__block--bg">
+                    <picture><source srcset="./img/bg1.webp" type="image/webp"><img src="./img/bg1.jpg" alt=""></picture>
+                </div>
+                <div class="main-grid__block--flag">Против</div>
+                <div class="main-grid__block--title">Против маркетинга, <br>который нельзя подтвердить цифрами</div>
+            </div>
+            <div class="main-grid__block">
+                <div class="main-grid__block--flag">Против</div>
+                <div class="main-grid__block--title">Против оценки <br>маркетинга <br>по ощущениям</div>
+            </div>
+            <div class="main-grid__block">
+                <div class="main-grid__block--bg">
+                    <picture><source srcset="./img/bg3.webp" type="image/webp"><img src="./img/bg3.jpg" alt=""></picture>
+                </div>
+                <div class="main-grid__block--flag">Против</div>
+                <div class="main-grid__block--title">Против маркетинга, <br>который по факту <br>ничего не генерит, но <br>радует собственника</div>
+            </div>
+            <div class="main-grid__block">
+                <div class="main-grid__block--bg">
+                    <picture><source srcset="./img/bg4.webp" type="image/webp"><img src="./img/bg4.png" alt=""></picture>
+                </div>
+                <div class="main-grid__block--title">Мы выстраиваем понятный маркетинг, который даёт рост ×2-3 за счёт системы, а не эмоций</div>
+                <div class="main-grid__block--text">Наш метод построен на подходе Data Driven Marketing - маркетинг основанный на данных</div>
+            </div>
+        </div>
+    </div>
+</section>
+            <section class="main-price">
+    <div class="main-price__in center_block">
+        <div class="main-price__l-side">
+            <div class="main-price__flag">Причины</div>
+            <div class="main-price__info">
+                <h2 class="main-price__title">Тарифы наших услуг <b>Тарифы наших</b></h2>
+                <div class="main-price__text">Наш метод построен на подходе Data Driven Marketing - маркетинг основанный на данных</div>
+            </div>
+        </div>
+        <div class="main-price__r-side">
+            <div class="main-price__block">
+                <div class="main-price__block--title">Business</div>
+                <div class="main-price__block--price">₽15 000 <span>/в месяц</span></div>
+                <div class="main-price__block--text">Наш метод построен на подходе Data Driven Marketing - маркетинг основанный на данных</div>
+                <ul class="main-price__block--list">
+                    <li>Наш метод построен на подходе Data Driven Marketing</li>
+                    <li>Наш метод построен на подходе Data Driven Marketing</li>
+                    <li>Наш метод построен на подходе Data Driven Marketing</li>
+                </ul>
+                <button class="main-price__block--btn" data-modal-id="1">Узнать больше</button>
+            </div>
+            <div class="main-price__block main-price__block--light">
+                <div class="main-price__block--title">Starter</div>
+                <div class="main-price__block--price">₽15 000</div>
+                <div class="main-price__block--text">Наш метод построен на подходе Data Driven Marketing - маркетинг основанный на данных</div>
+                <ul class="main-price__block--list">
+                    <li>Наш метод построен на подходе Data Driven Marketing </li>
+                    <li>Наш метод построен на подходе Data Driven Marketing </li>
+                    <li>Наш метод построен на подходе Data Driven Marketing </li>
+                </ul>
+                <button class="main-price__block--btn" data-modal-id="1">Узнать больше</button>
+            </div>
+        </div>
+    </div>
+</section>
+            <section class="main-callback">
+    <div class="main-callback__in center_block">
+        <div class="main-callback__l-side">
+            <div class="main-callback__title">Хотите расти? <br>Давайте разберем ваш отдел маркетинга на часовой сессии!</div>
+            <div class="main-callback__text">Наш метод построен на подходе Data Driven Marketing - маркетинг основанный на данных</div>
+            <div class="main-callback__contact">
+                <div class="main-callback__span">Обсудить задачу</div>
+                <div class="main-callback__socs">
+                    <a href="#" class="main-callback__soc" target="_blank" rel="noopener noreferrer">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="5" fill="#F6F6F6" />
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.1283 20.5951C16.4172 18.7451 19.2842 17.5494 20.7062 16.9628C24.7887 15.2933 25.6373 15 26.1878 15C26.3024 15 26.5777 15.0226 26.7611 15.1579C26.8988 15.2707 26.9446 15.4287 26.9676 15.5415C26.9905 15.6543 27.0134 15.9024 26.9905 16.1055C26.7611 18.3841 25.8208 23.9566 25.3162 26.506C25.1098 27.5889 24.697 27.9499 24.307 27.995C23.4584 28.0627 22.7933 27.431 21.9676 26.9121C20.6832 26.0773 19.9493 25.5584 18.6879 24.7462C17.2429 23.7987 18.1833 23.2798 19.009 22.445C19.2154 22.2194 22.9997 18.8579 23.0685 18.542C23.0685 18.4969 23.0915 18.3616 22.9997 18.2939C22.908 18.2262 22.7933 18.2487 22.7016 18.2713C22.564 18.2939 20.4998 19.6475 16.4861 22.3097C15.8897 22.7158 15.3622 22.8963 14.8806 22.8963C14.3531 22.8963 13.3439 22.603 12.587 22.3548C11.6696 22.0615 10.9357 21.9036 11.0045 21.4073C11.0733 21.1365 11.4402 20.8658 12.1283 20.5951Z" fill="#70338E" />
+                        </svg>
+                    </a>
+                    <a href="#" class="main-callback__soc" target="_blank" rel="noopener noreferrer">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="5" fill="#F6F6F6" />
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.1736 27.8093L13.5788 25.1425L12.8334 23.7407C11.404 21.0528 11.8398 17.8196 13.9371 15.5518C16.887 12.362 22.0704 12.1296 25.3297 15.041L25.557 15.244C27.2489 16.7553 28.1378 18.8961 27.9826 21.0855C27.6512 25.7595 22.8322 28.9644 18.0347 27.7013L16.2422 27.2294L13.3982 27.9934C13.2745 28.0267 13.1554 27.929 13.1736 27.8093ZM16.5187 17.627L16.1895 18.3522C15.925 18.9346 15.8378 19.5827 16.0939 20.1686C16.4014 20.8724 16.9909 21.8728 18.0819 22.7873C19.173 23.7019 20.2955 24.1364 21.0726 24.3418C21.7195 24.5128 22.3916 24.355 22.9737 24.0389L23.7228 23.6321C24.2306 23.3563 24.31 22.6955 23.8807 22.3191L23.3064 21.8022C22.9896 21.5245 22.5035 21.5115 22.1709 21.7721C21.798 22.0643 20.9856 22.4528 20.5616 22.2308C20.3086 22.0983 19.7068 21.6622 19.5118 21.4987C19.2855 21.3091 18.725 20.7475 18.5412 20.4979C18.3064 20.1792 18.5741 19.4546 18.736 19.0979L18.8378 18.8772C18.9853 18.5523 18.8976 18.1763 18.6175 17.9415L17.8972 17.3369C17.4529 16.9645 16.7526 17.1119 16.5187 17.627Z" fill="#70338E" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="main-callback__r-side">
+            <form action="">
+                <input type="text" placeholder="Имя">
+                <input type="tel" placeholder="Номер телефона">
+                <input type="text" placeholder="Название компании">
+                <input type="text" placeholder="Ниша">
+                <label class="main-callback__checkbox">
+                    <span>Есть ли отдел продаж</span>
+                    <input type="checkbox">
+                </label>
+                <input type="text" placeholder="Оборот по году">
+                <textarea placeholder="Запрос"></textarea>
+                <input type="submit" value="Отправить">
+            </form>
+        </div>
+    </div>
+</section>
+        </main>
+        <footer class="footer">
+    <div class="footer__in center_block">
+        <div class="footer__top">
+            <nav class="footer__menu footer__menu--l-side">
+                <ul>
+                    <li><a href="#">Причины</a></li>
+                    <li><a href="#">Проблемы</a></li>
+                    <li><a href="#">Отзывы</a></li>
+                </ul>
+            </nav>
+            <div class="footer__info">
+                <div class="footer__logo">
+                    <img src="./img/svg/logo.svg" alt="Webula">
+                </div>
+                <button class="footer__btn" data-modal-id="1">Связаться</button>
+            </div>
+            <nav class="footer__menu footer__menu--r-side">
+                <ul>
+                    <li><a href="#">Причины</a></li>
+                    <li><a href="#">Проблемы</a></li>
+                    <li><a href="#">Отзывы</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer__bottom">
+            <img src="./img/svg/logo-big.svg" alt="">
+        </div>
+    </div>
+</footer>
+        <div class="modal" data-modal="1">
+    <div class="modal__in">
+        <div class="modal__closer"></div>
+        <div class="modal__title">Авторизация</div>
+        <div class="modal__text">На указанный номер, будет направлен смс-код для подтверждения</div>
+        <form action="/login" method="POST" class="modal__form">
+            <div class="modal__form--input">
+                <input type="tel" id="tel" name="phone" placeholder="Телефон" required>
+                <label for="tel">Телефон</label>
+            </div>
+            <div class="modal__form--submit">
+                <input id="sb2" type="submit" value="Войти">
+                <label for="sb2"></label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal modal_sends" data-modal="2">
+    <div class="modal__in">
+        <div class="modal__closer"></div>
+        <div class="modal__title">Отписаться от рассылки</div>
+        <div class="modal__text">Для того чтобы отписаться от рассылки <br>введите номер телефона</div>
+        <form action="/unsubcribe" method="POST" class="modal__form">
+            <div class="modal__form--input">
+                <input type="tel" id="tel2" name="phone" placeholder="Телефон" required>
+                <label for="tel2">Телефон</label>
+            </div>
+            <div class="modal__form--submit">
+                <input id="sb1" type="submit" value="Отписаться">
+                <label for="sb1"></label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal modal_check" data-modal="3">
+    <div class="modal__in">
+        <div class="modal__closer"></div>
+        <div class="modal__title">Заполните форму</div>
+        <form action="/newform" class="modal__form" method="POST">
+            <div class="modal__form--input">
+                <input type="text" id="name1" name="fio" placeholder="Ф.И.О" required>
+                <label for="name1">Ф.И.О</label>
+            </div>
+            <div class="modal__form--input">
+                <input type="text" id="date1" name="birthday" placeholder="Дата рождения" required>
+                <label for="date1">Дата рождения</label>
+            </div>
+            <div class="modal__form--input">
+                <input type="text" id="adr1" name="address" placeholder="Адрес проживания" required>
+                <label for="adr1">Адрес проживания</label>
+            </div>
+            <div class="modal__form--input">
+                <input type="email" id="email1" name="email" placeholder="Почта" required>
+                <label for="email1">Почта</label>
+            </div>
+            <div class="modal__form--input">
+                <input type="tel" id="tel3" name="phone" placeholder="Телефон" required>
+                <label for="tel3">Телефон</label>
+            </div>
+            <label class="modal__form--custom-checkbox">
+                <input type="checkbox" name="checkbox1" value="checked">
+                <span><span>Я даю свое <a href="#" target="_blank"> Согласие на обработку персональных данных</a></span></span>
+            </label>
+            <label class="modal__form--custom-checkbox">
+                <input type="checkbox" name="checkbox2" value="checked">
+                <span><span>Я даю свое Предварительное <br> <a href="#" target="_blank"> согласие на получение рекламных материалов</a></span></span>
+            </label>
+            <div class="modal__form--submit">
+                <input id="sb3" type="submit" value="Получить деньги">
+                <label for="sb3"></label>
+            </div>
+        </form>
+    </div>
+</div>
+    </div>
+    <script src="js/app.min.js?_v=20251128153929"></script>
+</body>
+</html>

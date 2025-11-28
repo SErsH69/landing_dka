@@ -1,0 +1,135 @@
+.footer {
+    border-top: 1px solid #838383;
+    background:
+    linear-gradient(135deg, #232323 0%, #0a0a0a 51.44%, #232323 94.71%),
+    #d9d9d9;
+    padding-top: 56px;
+    margin-top: 130px;
+    @media all and (max-width: 1023px) {
+        padding-top: 35px;
+        margin-top: 80px;
+    }
+    @media all and (max-width: 540px) {
+        padding-top: 30px;
+        margin-top: 60px;
+    }
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 45px;
+        @media all and (max-width: 1023px) {
+            margin-bottom: 45px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        @media all and (max-width: 540px) {
+            margin-bottom: 20px;
+        }
+    }
+    &__menu {
+        margin-top: 10px;
+        @media all and (max-width: 1023px) {
+            order: 3;
+            width: calc(50% - 10px);
+            margin-top: 0;
+        }
+        &--r-side {
+            ul {
+                justify-content: flex-end;
+            }
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 45px;
+            @media all and (max-width: 1023px) {
+                flex-wrap: wrap;
+            }
+            @media all and (max-width: 540px) {
+                gap: 18px;
+                flex-direction: column;
+            }
+            li {
+                a {
+                    font-family: var(--second-family);
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 109%;
+                    letter-spacing: -0.03em;
+                    color: #fff;
+                    text-decoration: none;
+                    background-image: linear-gradient(#fff, #fff);
+                    background-position: 0% 100%;
+                    background-repeat: no-repeat;
+                    background-size: 0% 1px;
+                    transition: background-size .3s;
+                    @media all and (max-width: 1023px) {
+                        font-size: 14px;
+                    }
+                    &:hover {
+                      background-size: 100% 1px;
+                    }
+                }
+            }
+        }
+    }
+    &__info {
+        @media all and (max-width: 1023px) {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        @media all and (max-width: 540px) {
+            margin-bottom: 30px;
+        }
+    }
+    &__logo {
+        font-size: 0;
+        margin-bottom: 20px;
+        max-width: 124px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        @media all and (max-width: 1023px) {
+            margin-bottom: 0;
+            flex: 0 0 120px;
+            margin-left: 0;
+        }
+    }
+    &__btn {
+        border-radius: 5px;
+        font-family: var(--second-family);
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 109%;
+        letter-spacing: -0.03em;
+        text-align: center;
+        color: #232323;
+        cursor: pointer;
+        width: 100%;
+        outline: none;
+        border: 0;
+        padding: 9px 52px;
+        &:hover {
+            background: #cacaca;
+        }
+        @media all and (max-width: 1023px) {
+            width: auto;
+        }
+        @media all and (max-width: 540px) {
+                padding: 9px 38px;
+        }
+    }
+    &__bottom {
+        font-size: 0;
+        img {
+            width: 100%;
+        }
+    }
+}

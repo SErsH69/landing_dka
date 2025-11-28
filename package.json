@@ -1,0 +1,51 @@
+{
+  "name": "gulp_modern",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "type": "module",
+  "scripts": {
+    "dev": "gulp",
+    "build": "gulp build --build"
+  },
+  "author": "Goncharov Sergey",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "2.23.6",
+    "bs-console-qrcode": "latest",
+    "del": "latest",
+    "dotenv": "latest",
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-clean-css": "latest",
+    "gulp-file-include": "latest",
+    "gulp-fonter": "latest",
+    "gulp-group-css-media-queries": "latest",
+    "gulp-if": "latest",
+    "gulp-imagemin": "^9.0.0",
+    "gulp-newer": "latest",
+    "gulp-notify": "latest",
+    "gulp-plumber": "latest",
+    "gulp-rename": "latest",
+    "gulp-replace": "latest",
+    "gulp-sass": "latest",
+    "gulp-svg-sprite": "latest",
+    "gulp-ttf2woff2": "latest",
+    "gulp-version-number": "latest",
+    "gulp-webp": "latest",
+    "gulp-webp-html-nosvg": "latest",
+    "gulp-webpcss": "latest",
+    "ngrok": "latest",
+    "sass": "latest",
+    "webp-converter": "2.2.3",
+    "webpack": "latest",
+    "webpack-stream": "latest"
+  },
+  "dependencies": {
+    "@google/model-viewer": "^4.1.0",
+    "@google/model-viewer-effects": "^1.5.0",
+    "jquery": "^3.6.0",
+    "slick-carousel": "^1.8.1",
+    "vue": "^2.6.14"
+  }
+}
