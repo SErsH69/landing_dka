@@ -12,9 +12,11 @@
     <div class="wrapper" id="app" :class="{isMobile, isTablet}">
         @@include('blocks/modules/header/header.html', {})
         <main class="content">
-
+            @@include('blocks/modules/main-first/main-first.html', {})
             @@include('blocks/modules/main-marketing/main-marketing.html', {})
-            
+            @@include('blocks/modules/main-red/main-red.html', {})
+            @@include('blocks/modules/main-scroll/main-scroll.html', {})
+            @@include('blocks/modules/main-slider/main-slider.html', {})
             @@include('blocks/modules/main-cards/main-cards.html', {})
             @@include('blocks/modules/main-team/main-team.html', {})
             @@include('blocks/modules/main-grid/main-grid.html', {})

@@ -5,9 +5,10 @@ import Vue from 'vue/dist/vue.js';
 
 import Header from '../blocks/modules/header/header.js';
 import MainMarketing from '../blocks/modules/main-marketing/main-marketing.js';
+import MainSlider from '../blocks/modules/main-slider/main-slider.js';
 import MainCards from '../blocks/modules/main-cards/main-cards.js';
 import Modals from '../blocks/modules/modals/modals.js';
-
+MainSlider
 window.app = new Vue({
     el: '#app',
     data: () => ({
@@ -21,6 +22,7 @@ window.app = new Vue({
             isMobileMenuOpened: false,
         }),
         mainMarketing: new MainMarketing(),
+        mainSlider: new MainSlider(),
         mainCards: new MainCards(),
         modals: new Modals({
             modalsSelector: "data-modal",
@@ -37,6 +39,7 @@ window.app = new Vue({
         this.isMounted = true;
         this.header.init();
         this.mainMarketing.init();
+        this.mainSlider.init();
         this.mainCards.init();
         this.modals.init();
     },

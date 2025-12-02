@@ -41,12 +41,12 @@ body {
     flex: 0 0 auto;
 }
 .center_block {
-    max-width: vw(1280);
+    max-width: 1280px;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: vw(40);
-    padding-right: vw(40);
+    padding-left: 40px;
+    padding-right: 40px;
     @media all and (max-width: 1023px) {
         max-width: 1280px;
         padding-left: 30px;
